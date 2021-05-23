@@ -38,11 +38,6 @@ public class SinglyLinkedList {
 		ll.addInStart(3);
 		ll.addAtEnd(0);
 		ll.printLL();
-		
-		
-		
-		
-		
 
 	}
 
