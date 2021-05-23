@@ -27,12 +27,21 @@ public class AddTwoNumberQ2 {
 		}
 		
 		SinglyLinkedList output = new SinglyLinkedList();
-		
+		int carry = 0;
+		int sum =0;
+		int num = 0;
 		while (ll1.head != null || ll2.head != null) {
+			num = ll1.head.data + ll2.head.data;
 			
-			output.addAtEnd(ll1.head.data + ll2.head.data);
+			sum = carry + (sum % 10);
+			carry = num / 10;
+			output.addAtEnd(sum);
 			ll1.head = ll1.head.next;
 			ll2.head = ll2.head.next;
+		}
+		
+		while (ll1.head != null) {
+			
 		}
 		
 		output.printLL();
