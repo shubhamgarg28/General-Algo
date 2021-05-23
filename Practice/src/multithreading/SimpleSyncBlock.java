@@ -1,25 +1,24 @@
 package multithreading;
 
-	// A Java program to demonstrate working of 
-	// synchronized. 
-	import java.io.*; 
-	import java.util.*; 
-	  
-	// A Class used to send a message 
+// A Class used to send a message 
 	class Sender 
 	{ 
 	    public void send(String msg) 
 	    { 
-	        System.out.println("Sending\t"  + msg ); 
-	        try
-	        { 
-	            Thread.sleep(1000); 
-	        } 
-	        catch (Exception e) 
-	        { 
-	            System.out.println("Thread  interrupted."); 
-	        } 
-	        System.out.println("\n" + msg + "Sent"); 
+	    	System.out.println("Print => " + msg);
+	    	synchronized (this) {
+	    		System.out.println("Sending\t"  + msg ); 
+		        try
+		        { 
+		            Thread.sleep(10000); 
+		        } 
+		        catch (Exception e) 
+		        { 
+		            System.out.println("Thread  interrupted."); 
+		        } 
+		        System.out.println("\n" + msg + "Sent"); 
+			}
+	        
 	    } 
 	} 
 	  
@@ -41,11 +40,15 @@ package multithreading;
 	    { 
 	        // Only one thread can send a message 
 	        // at a time. 
-	        synchronized(sender) 
-	        { 
-	            // synchronizing the snd object 
-	            sender.send(msg); 
-	        } 
+//	        synchronized(sender) 
+//	        { 
+//	            // synchronizing the snd object 
+//	            sender.send(msg); 
+//	        } 
+	    	sender.send(msg);
+	    	
+	    	
+	    	
 	    } 
 	} 
 	  
