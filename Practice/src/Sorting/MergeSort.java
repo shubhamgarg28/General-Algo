@@ -4,7 +4,7 @@ import static utils.PrintingUtils.*;
 
 public class MergeSort {
 	
-	static int[] array = {9,8,1,3,5,4,6,2};
+	static int[] array = {4,3,2,1,5,6,8,7,4,3,2,1,5,6,8,7,4,3,2,1,5,6,8,7,4,3,2,1,5,6,8,7,4,3,2,1,5,6,8,74,3,2,1,5,6,8,7};
 	
 	public static int[] mergeSort(int[] array, int p, int r) {
 		
@@ -32,8 +32,8 @@ public class MergeSort {
 		}
 		int i = 0;
 		int j = 0;
-		printArray(left, "Left Array");
-		printArray(right, "Right Array");
+		//printArray(left, "Left Array");
+		//printArray(right, "Right Array");
 		int k = 0;
 		for ( k = p ; k < r ; k++) {
 			if (i < n1 && j < n2) {
@@ -62,16 +62,17 @@ public class MergeSort {
 			j++;
 			k++;
 		}
-		printArray(array, "Main Array");
+		//printArray(array, "Main Array");
 		
 		return array;
 	}
 
 	public static void main(String[] args) {			
 
-		
+		System.out.println(System.currentTimeMillis());
 		array = mergeSort(array, 0, array.length-1);
-		printArray(array, "Final Array");
+		System.out.println(System.currentTimeMillis());
+		//printArray(array, "Final Array");
 	}
 
 }

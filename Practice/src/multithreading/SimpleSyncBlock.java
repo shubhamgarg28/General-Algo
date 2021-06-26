@@ -10,7 +10,7 @@ package multithreading;
 	    		System.out.println("Sending\t"  + msg ); 
 		        try
 		        { 
-		            Thread.sleep(10000); 
+		            Thread.sleep(1000); 
 		        } 
 		        catch (Exception e) 
 		        { 
@@ -40,12 +40,12 @@ package multithreading;
 	    { 
 	        // Only one thread can send a message 
 	        // at a time. 
-//	        synchronized(sender) 
-//	        { 
-//	            // synchronizing the snd object 
-//	            sender.send(msg); 
-//	        } 
-	    	sender.send(msg);
+	        synchronized(sender) 
+	        { 
+	            // synchronizing the snd object 
+	            sender.send(msg); 
+	        } 
+	    	//sender.send(msg);
 	    	
 	    	
 	    	
